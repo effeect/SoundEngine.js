@@ -49,13 +49,7 @@ function handleFile(file) //This function handles the audio transfer from the co
     }
 }
 
-function mapping(variable)
-{
-  var stor = map(variable,0,255,0,100)
-  return stor;
-}
-
-function soundDraw()
+function drawSound()
 {
   level = amplitude.getLevel() //gets the level of the amplitude real time, it's between 1 and 0
   spectrum = frequency.analyze() //This returns an array, this is required at all times
