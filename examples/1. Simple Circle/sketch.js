@@ -16,5 +16,7 @@ function draw()
     background(0)
     
     ellipse(width/2,height/2,bass,bass)
-    
+    console.log(bass)
+    console.log(mid)
+    console.log(treble)
 }
