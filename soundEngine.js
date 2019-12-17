@@ -1,29 +1,29 @@
 //P5.js, P5Sound.js and P5.dom.js are required to use this code.
 
-var level; //Amplitude level of the program, global variable
-var waveform; //Frequency values of the song, global variable
+let level; //Amplitude level of the program, global variable
+let waveform; //Frequency values of the song, global variable
 
 //File input related functions :
-var input; //Creates a single file input for our program
-var sound; //The sound file
+let input; //Creates a single file input for our program
+let sound; //The sound file
 
 //List of possible frequencies that you can get from the song, range from 0-255
-var bass;
-var lowMid;
-var mid;
-var highMid;
-var treble;
+let bass;
+let lowMid;
+let mid;
+let highMid;
+let treble;
 
 //Global Variables :
-var amplitude;
-var frequency;
+let amplitude;
+let frequency;
 
-//Booleans
-var onOff = true; //On off switch for the program
-var soundRecieved = false;
-var isPlaying;
+//Boolean checks
+let onOff = true; //On off switch for the program
+let soundRecieved = false;
+let isPlaying;
 
-
+//This function takes play in the P5.js setup function
 function setupSound()
 {
   createCanvas(400,400);
@@ -54,7 +54,7 @@ function drawSound()
   level = amplitude.getLevel() //gets the level of the amplitude real time, it's between 1 and 0
   spectrum = frequency.analyze() //This returns an array, this is required at all times
 
-  //List of returned frequencies-------------------------
+  //List of returned frequencies from p5.sound
   bass = frequency.getEnergy("bass")
   lowMid = frequency.getEnergy("lowMid")
   mid = frequency.getEnergy("mid")
@@ -69,7 +69,7 @@ function drawSound()
 
 function playMusic()
 {
-  var soundLoad = sound.isLoaded()
+  let soundLoad = sound.isLoaded();
   if(soundLoad)
   {
     sound.play()
