@@ -1,5 +1,4 @@
 //P5.js, P5Sound.js and P5.dom.js are required to use this code.
-
 let level; //Amplitude level of the program, global variable
 let waveform; //Frequency values of the song, global variable
 
@@ -41,11 +40,14 @@ function handleFile(file) //This function handles the audio transfer from the co
 {
   if (file.type === 'audio')
     {
-        
         console.log("File recieved")
         sound = loadSound(file.data)
         soundRecieved = true;
         console.log(file)
+    }
+  else
+    {
+        console.error("Incorrect file format, please use an audio format")  
     }
 }
 
@@ -73,7 +75,7 @@ function playMusic()
   if(soundLoad)
   {
     sound.play()
-    soundRecieved = false;
+    soundRecieved = false; //This is to make sure
       isPlaying = true;
   }
 }
